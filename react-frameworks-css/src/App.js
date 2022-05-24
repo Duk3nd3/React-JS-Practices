@@ -1,5 +1,7 @@
 import React from 'react';
-import Bulma from './components/Bulma';
+import MaterialUI from './components/MaterialUI';
+// import ReactBootstrap from './components/ReactBootstrap';
+// import Bulma from './components/Bulma';
 // import Bootstrap from './components/Bootstrap';
 
 function App() {
@@ -8,7 +10,9 @@ function App() {
 			<h1>Frameworks CSS con React</h1>
 			<hr />
 			{/* <Bootstrap /> */}
-			<Bulma />
+			{/* <Bulma /> */}
+			{/* <ReactBootstrap /> */}
+			<MaterialUI />
 		</div>
 	);
 }
