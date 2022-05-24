@@ -7,7 +7,7 @@ import MaterialUI from './components/MaterialUI';
 function App() {
 	return (
 		<div>
-			<h1>Frameworks CSS con React</h1>
+			<h1>Frameworks CSS con React.</h1>
 			<hr />
 			{/* <Bootstrap /> */}
 			{/* <Bulma /> */}
