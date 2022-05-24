@@ -33,7 +33,7 @@ function App() {
 					</a>
 				</section>
 				<section>
-					<Componente msg='Hola soy un Componente Funcional Expresado desde una prop' />
+					<Componente msg='Hola, soy un Componente Funcional Expresado desde una prop' />
 					<hr />
 					<Propiedades
 						cadena='Esto es una cadena de texto'
