@@ -1,4 +1,3 @@
-import React from 'react'; //A partir de la version 17 de React no es necesario llamar a React.
 import logo from './logo.svg';
 import Componente from './components/Componente';
 import './App.css';
