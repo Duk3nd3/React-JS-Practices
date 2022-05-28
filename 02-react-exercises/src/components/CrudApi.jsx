@@ -2,28 +2,37 @@ import CrudForm from './CrudForm';
 import CrudTable from './CrudTable';
 import React, { useEffect, useState } from 'react';
 import { helpHttp } from '../helpers/helpHttp';
+import Message from './Message';
+import Loader from './Loader';
 
 const CrudApi = () => {
-	const [db, setDb] = useState([]);
+	const [db, setDb] = useState(null);
 	const [dataToEdit, setDataToEdit] = useState(null);
+	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(false);
 
-	let api = helpHttp();
 	let url = 'http://localhost:5000/santos';
+	// let api = helpHttp();
 
 	useEffect(() => {
-		api.get(url).then((res) => {
-			// console.log(res);
-			if (!res.err) {
-				setDb(res);
-			} else {
-				setDb(null);
-			}
-		});
-	}, []);
+		setLoading(true);
+		helpHttp()
+			.get(url)
+			.then((res) => {
+				if (!res.err) {
+					setDb(res);
+					setError(null);
+				} else {
+					setDb(null);
+					setError(res);
+				}
+
+				setLoading(false);
+			});
+	}, [url]);
 
 	const createData = (data) => {
 		data.id = Date.now();
-		// console.log(data)
 		setDb([...db, data]);
 	};
 
@@ -53,11 +62,20 @@ const CrudApi = () => {
 					dataToEdit={dataToEdit}
 					setDataToEdit={setDataToEdit}
 				/>
-				<CrudTable
-					data={db}
-					setDataToEdit={setDataToEdit}
-					deleteData={deleteData}
-				/>
+				{loading && <Loader />}
+				{error && (
+					<Message
+						msg={`Error ${error.status}: ${error.statusText}`}
+						bgColor='#dc3545'
+					/>
+				)}
+				{db && (
+					<CrudTable
+						data={db}
+						setDataToEdit={setDataToEdit}
+						deleteData={deleteData}
+					/>
+				)}
 			</article>
 		</div>
 	);
