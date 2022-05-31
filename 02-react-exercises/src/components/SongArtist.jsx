@@ -3,7 +3,7 @@ import React from 'react';
 const songArtist = () => {
 	return (
 		<div>
-			<h2>Informacion Artista</h2>
+			<h2>Informacion Artista </h2>
 		</div>
 	);
 };
