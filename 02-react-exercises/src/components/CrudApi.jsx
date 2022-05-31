@@ -94,7 +94,7 @@ const CrudApi = () => {
 
 	return (
 		<div>
-			<h2>CRUD Api</h2>
+			<h2>CRUD Api </h2>
 			<article className='grid-1-2'>
 				<CrudForm
 					createData={createData}
