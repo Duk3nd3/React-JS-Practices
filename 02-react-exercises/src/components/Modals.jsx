@@ -1,7 +1,11 @@
 import React from 'react';
+import { useModal } from '../hooks/useModal';
 import { Modal } from './Modal';
 
 const Modals = () => {
+	const [isOpenModalUno, openModalUno, closeModalUno] = useModal(false);
+	const [isOpenModalDos, openModalDos, closeModalDos] = useModal(false);
+
 	return (
 		<div>
 			<h2>Modales</h2>
@@ -12,7 +16,7 @@ const Modals = () => {
 				<img src='https://placeimg.com/400/400/animals' alt='Animals' />
 			</Modal>
 			<button>Modal 2</button>
-			<Modal>
+			{/* <Modal>
 				<h3>Hola este es el contenido de mi modal 2</h3>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
@@ -20,7 +24,7 @@ const Modals = () => {
 					tempore sit explicabo consectetur totam, voluptatum numquam esse?
 				</p>
 				<img src='https://placeimg.com/400/400/nature' alt='Nature' />
-			</Modal>
+			</Modal> */}
 		</div>
 	);
 };
