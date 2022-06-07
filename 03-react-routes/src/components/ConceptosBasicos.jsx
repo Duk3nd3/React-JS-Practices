@@ -6,6 +6,7 @@ import Error404 from '../pages/Error404';
 import { Switch } from 'react-router-dom';
 import MenuConceptos from './MenuConceptos';
 import { Route } from 'react-router-dom';
+import Usuario from '../pages/Usuario';
 
 const ConceptosBasicos = () => {
 	return (
@@ -16,6 +17,7 @@ const ConceptosBasicos = () => {
 				<Route exact path='/' component={Home} />
 				<Route exact path='/acerca' component={Acerca} />
 				<Route exact path='/contacto' component={Contacto} />
+				<Route exact path='/usuario/:username' component={Usuario} />
 				<Route path='*' component={Error404} />
 			</Switch>
 		</div>
