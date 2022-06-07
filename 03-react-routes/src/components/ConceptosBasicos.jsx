@@ -1,30 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Acerca from '../pages/Acerca';
 import Contacto from '../pages/Contacto';
 import Error404 from '../pages/Error404';
 import { Switch } from 'react-router-dom';
+import MenuConceptos from './MenuConceptos';
+import { Route } from 'react-router-dom';
 
 const ConceptosBasicos = () => {
 	return (
 		<div>
 			<h2>Conceptos Basicos</h2>
-			<Router>
-				<Switch>
-					<Route exact path='/' component={Home} />
-					<Route exact path='/acerca' component={Acerca} />
-					<Route exact path='/contacto' component={Contacto} />
-					<Route path='*' component={Error404} />
-				</Switch>
-			</Router>
+			<MenuConceptos />
+			<Switch>
+				<Route exact path='/' component={Home} />
+				<Route exact path='/acerca' component={Acerca} />
+				<Route exact path='/contacto' component={Contacto} />
+				<Route path='*' component={Error404} />
+			</Switch>
 		</div>
 	);
 };
 
 export default ConceptosBasicos;
 
-//COPIA
+//REFACTORIZACION DEL CODIGO -DEJO COPIA DE LO QUE HABIA ANTES-
 
 // return (
 // 	<div>
