@@ -7,6 +7,7 @@ import { Switch } from 'react-router-dom';
 import MenuConceptos from './MenuConceptos';
 import { Route } from 'react-router-dom';
 import Usuario from '../pages/Usuario';
+import Productos from '../pages/Productos';
 
 const ConceptosBasicos = () => {
 	return (
@@ -18,6 +19,7 @@ const ConceptosBasicos = () => {
 				<Route exact path='/acerca' component={Acerca} />
 				<Route exact path='/contacto' component={Contacto} />
 				<Route exact path='/usuario/:username' component={Usuario} />
+				<Route exact path='/productos' component={Productos} />
 				<Route path='*' component={Error404} />
 			</Switch>
 		</div>
