@@ -51,7 +51,7 @@ const ReactTopics = () => {
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
 						id praesentium accusamus consectetur perspiciatis explicabo velit,
 						officia vel quas! Provident ab eum inventore quibusdam hic pariatur
-						maiores quia, cum sint.
+						maiores quia, cum sint
 					</p>
 				</Route>
 				<Route path={`${path}/:topic`} component={Topic} />
