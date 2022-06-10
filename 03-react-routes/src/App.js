@@ -1,6 +1,6 @@
-import ConceptosBasicos from './components/ConceptosBasicos';
+// import ConceptosBasicos from './components/ConceptosBasicos';
 import CrudApi from './components/CrudApi';
-import SongSearch from './components/SongSearch';
+// import SongSearch from './components/SongSearch';
 
 function App() {
 	return (
@@ -14,11 +14,11 @@ function App() {
 				Documentacion React Router @5.2.0+
 			</a>
 			<hr />
-			<SongSearch />
+			{/* <SongSearch /> */}
 			<hr />
 			<CrudApi />
 			<hr />
-			<ConceptosBasicos />
+			{/* <ConceptosBasicos /> */}
 		</>
 	);
 }
