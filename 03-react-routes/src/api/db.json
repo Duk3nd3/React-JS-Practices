@@ -34,6 +34,21 @@
       "name": "Aldebaran",
       "constellation": "Tauro",
       "id": 1654823973698
+    },
+    {
+      "name": "Camus",
+      "constellation": "Acuario",
+      "id": 1654826447051
+    },
+    {
+      "name": "Aioria",
+      "constellation": "Leo",
+      "id": 1654828058353
+    },
+    {
+      "name": "Milo",
+      "constellation": "Escorpio",
+      "id": 1654828301744
     }
   ]
 }

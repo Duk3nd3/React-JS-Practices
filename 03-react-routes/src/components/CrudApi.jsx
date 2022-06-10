@@ -113,40 +113,42 @@ const CrudApi = () => {
 				</header>
 				<Switch>
 					<Route exact path='/'>
-						<h2>Home de Santos</h2>
+						<article className='grid-1-2'>
+							{loading && <Loader />}
+							{error && (
+								<Message
+									msg={`Error ${error.status}: ${error.statusText}`}
+									bgColor='#dc3545'
+								/>
+							)}
+							{db && (
+								<CrudTable
+									data={db}
+									setDataToEdit={setDataToEdit}
+									deleteData={deleteData}
+								/>
+							)}
+						</article>
 					</Route>
 					<Route exact path='/agregar'>
-						<h2>Agregar Santos</h2>
+						<CrudForm
+							createData={createData}
+							updateData={updateData}
+							dataToEdit={dataToEdit}
+							setDataToEdit={setDataToEdit}
+						/>
 					</Route>
 					<Route exact path='/editar/:id'>
-						<h2>Editar Santos</h2>
+						<CrudForm
+							createData={createData}
+							updateData={updateData}
+							dataToEdit={dataToEdit}
+							setDataToEdit={setDataToEdit}
+						/>
 					</Route>
 					<Route path='*' children={<Error404 />} />
 				</Switch>
 			</HashRouter>
-			<h2>CRUD Api </h2>
-			<article className='grid-1-2'>
-				<CrudForm
-					createData={createData}
-					updateData={updateData}
-					dataToEdit={dataToEdit}
-					setDataToEdit={setDataToEdit}
-				/>
-				{loading && <Loader />}
-				{error && (
-					<Message
-						msg={`Error ${error.status}: ${error.statusText}`}
-						bgColor='#dc3545'
-					/>
-				)}
-				{db && (
-					<CrudTable
-						data={db}
-						setDataToEdit={setDataToEdit}
-						deleteData={deleteData}
-					/>
-				)}
-			</article>
 		</div>
 	);
 };
