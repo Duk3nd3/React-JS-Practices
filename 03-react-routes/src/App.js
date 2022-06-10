@@ -1,4 +1,6 @@
 import ConceptosBasicos from './components/ConceptosBasicos';
+import CrudApi from './components/CrudApi';
+import SongSearch from './components/SongSearch';
 
 function App() {
 	return (
@@ -11,6 +13,10 @@ function App() {
 			>
 				Documentacion React Router @5.2.0+
 			</a>
+			<hr />
+			<SongSearch />
+			<hr />
+			<CrudApi />
 			<hr />
 			<ConceptosBasicos />
 		</>
