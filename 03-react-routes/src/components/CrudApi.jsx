@@ -99,7 +99,7 @@ const CrudApi = () => {
 
 	return (
 		<div>
-			<HashRouter basename='santos'>
+			<HashRouter basename='/santos'>
 				<header>
 					<h2>CRUD API con Rutas</h2>
 					<nav>
