@@ -14,7 +14,7 @@ const SongTable = ({ mySongs, handleDeleteSong }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{mySongs.lenght > 0 ? (
+					{mySongs.length > 0 ? (
 						mySongs.map((el, index) => (
 							<SongTableRow
 								key={index}
