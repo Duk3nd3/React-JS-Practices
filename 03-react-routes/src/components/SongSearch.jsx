@@ -5,6 +5,7 @@ import SongForm from './SongForm';
 import { helpHttp } from '../helpers/helpHttp';
 import { HashRouter, Link, Route, Switch } from 'react-router-dom';
 import Error404 from '../pages/Error404';
+import SongTable from './SongTable';
 
 let mySongsInit = JSON.parse(localStorage.getItem('mySongs')) || [];
 
@@ -58,7 +59,9 @@ const SongSearch = () => {
 		alert('Salvando cancion en Favoritos');
 	};
 
-	const handleDeleteSong = (id) => {};
+	const handleDeleteSong = (id) => {
+		alert(`Eliminando cancion con el id: ${id}`);
+	};
 
 	return (
 		<div>
@@ -68,14 +71,17 @@ const SongSearch = () => {
 					<Link to='/'>Home</Link>
 				</header>
 				{loading && <Loader />}
-				<article className='grid-1-3'>
+				<article className='grid-1-2'>
 					<Switch>
 						<Route exact path='/'>
 							<SongForm
 								handleSearch={handleSearch}
 								handleSaveSong={handleSaveSong}
 							/>
-							<h2>Tabla de Canciones</h2>
+							<SongTable
+								mySongs={mySongs}
+								handleDeleteSong={handleDeleteSong}
+							/>
 							{search && !loading && (
 								<SongDetail search={search} lyric={lyric} bio={bio} />
 							)}
