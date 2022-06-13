@@ -35,6 +35,27 @@ function App() {
 					</ul>
 				</li>
 			</ul>
+			<h3>
+				<a
+					href='https://es.reactjs.org/docs/hooks-reference.html#usecallback'
+					target='_blank'
+					rel='noreferrer'
+				>
+					useCallback
+				</a>
+			</h3>
+			<ul>
+				<li>
+					Memoriza una funcion, para no volverla a definir en cada render.
+				</li>
+				<li>
+					Usalo siempre que se pase una funciona como <b>prop</b> a un
+					componente memorizado.
+				</li>
+				<li>
+					Usalo siempre que se pase una funcion como parametro de un efecto.
+				</li>
+			</ul>
 			<hr />
 			<Contador />
 		</div>
