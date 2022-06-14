@@ -56,6 +56,23 @@ function App() {
 					Usalo siempre que se pase una funcion como parametro de un efecto.
 				</li>
 			</ul>
+			<h3>
+				<a
+					href='https://es.reactjs.org/docs/hooks-reference.html#usememo'
+					target='_blank'
+					rel='noreferrer'
+				>
+					useMemo
+				</a>
+			</h3>
+			<ul>
+				<li>
+					Memoriza un valor calculado, es decir, el resultado de una funcion (
+					<b>no una funcion en si, para ello se usa useCallback</b>).
+				</li>
+				<li>Genera propiedades computadas.</li>
+				<li>Usalo en procesos pesados.</li>
+			</ul>
 			<hr />
 			<Contador />
 		</div>
