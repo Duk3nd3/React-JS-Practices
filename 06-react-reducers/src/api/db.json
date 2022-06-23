@@ -24,6 +24,26 @@
       "name": "Ikki",
       "constellation": "Fenix",
       "id": 1653959677214
+    },
+    {
+      "name": "Shura",
+      "constellation": "Capricornio",
+      "id": 1655946606691
+    },
+    {
+      "name": "Kanon",
+      "constellation": "Geminis",
+      "id": 1655946632975
+    },
+    {
+      "name": "Mu",
+      "constellation": "Aries",
+      "id": 1655946640596
+    },
+    {
+      "name": "Afrodita",
+      "constellation": "Piscis",
+      "id": 1655946663498
     }
   ]
 }
