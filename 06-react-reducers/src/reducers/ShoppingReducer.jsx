@@ -2,12 +2,42 @@ import { TYPES } from '../actions/ShoppingAction';
 
 export const shoppingInitialState = {
 	products: [
-		{ id: 1, name: 'Producto 1', price: 100 },
-		{ id: 2, name: 'Producto 2', price: 200 },
-		{ id: 3, name: 'Producto 3', price: 300 },
-		{ id: 4, name: 'Producto 4', price: 400 },
-		{ id: 5, name: 'Producto 5', price: 500 },
-		{ id: 6, name: 'Producto 6', price: 600 },
+		{
+			id: 1,
+			name: 'Producto 1',
+			price: 100,
+			desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, consequatur facilis! Dignissimos mollitia explicabo dicta similique amet quibusdam error alias veritatis perspiciatis dolorem? Rem, nisi esse! Obcaecati magnam distinctio laborum!',
+		},
+		{
+			id: 2,
+			name: 'Producto 2',
+			price: 200,
+			desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, consequatur facilis! Dignissimos mollitia explicabo dicta similique amet quibusdam error alias veritatis perspiciatis dolorem? Rem, nisi esse! Obcaecati magnam distinctio laborum!',
+		},
+		{
+			id: 3,
+			name: 'Producto 3',
+			price: 300,
+			desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, consequatur facilis! Dignissimos mollitia explicabo dicta similique amet quibusdam error alias veritatis perspiciatis dolorem? Rem, nisi esse! Obcaecati magnam distinctio laborum!',
+		},
+		{
+			id: 4,
+			name: 'Producto 4',
+			price: 400,
+			desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, consequatur facilis! Dignissimos mollitia explicabo dicta similique amet quibusdam error alias veritatis perspiciatis dolorem? Rem, nisi esse! Obcaecati magnam distinctio laborum!',
+		},
+		{
+			id: 5,
+			name: 'Producto 5',
+			price: 500,
+			desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, consequatur facilis! Dignissimos mollitia explicabo dicta similique amet quibusdam error alias veritatis perspiciatis dolorem? Rem, nisi esse! Obcaecati magnam distinctio laborum!',
+		},
+		{
+			id: 6,
+			name: 'Producto 6',
+			price: 600,
+			desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, consequatur facilis! Dignissimos mollitia explicabo dicta similique amet quibusdam error alias veritatis perspiciatis dolorem? Rem, nisi esse! Obcaecati magnam distinctio laborum!',
+		},
 	],
 	cart: [],
 };

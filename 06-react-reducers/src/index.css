@@ -18,3 +18,10 @@ body {
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 1rem;
 }
+
+.my-page {
+	margin: 2rem auto;
+	padding: 1rem;
+	width: 70%;
+	background-color: #ccc;
+}
