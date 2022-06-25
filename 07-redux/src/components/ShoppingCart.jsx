@@ -1,47 +1,41 @@
-import React, { useReducer } from 'react';
-import { TYPES } from '../actions/ShoppingAction';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-	shoppingReducer,
-	shoppingInitialState,
-} from '../reducers/ShoppingReducer';
+	addToCart,
+	clearCart,
+	deleteFromCart,
+} from '../actions/ShoppingAction';
 import CartItem from './CartItem';
 import ProductItem from './ProductItem';
 
 const ShoppingCart = () => {
-	const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
+	const state = useSelector((state) => state);
+	const dispatch = useDispatch();
 
-	const { products, cart } = state;
-
-	const addToCart = (id) => {
-		dispatch({ type: TYPES.ADD_TO_CART, payload: id });
-	};
-
-	const delFromCart = (id, all = false) => {
-		if (all) {
-			dispatch({ type: TYPES.REMOVE_ALL_FROM_CART, payload: id });
-		} else {
-			dispatch({ type: TYPES.REMOVE_ONE_FROM_CART, payload: id });
-		}
-	};
-
-	const clearCart = () => {
-		dispatch({ type: TYPES.CLEAR_CART });
-	};
+	const { products, cart } = state.cart;
 
 	return (
-		<div>
+		<div className='my-page m-3'>
 			<h2>Carrito de Compras</h2>
 			<h3>Productos</h3>
 			<article className='box grid-responsive'>
 				{products.map((product) => (
-					<ProductItem key={product.id} data={product} addToCart={addToCart} />
+					<ProductItem
+						key={product.id}
+						data={product}
+						addToCart={() => dispatch(addToCart(product.id))}
+					/>
 				))}
 			</article>
 			<h3>Carrito</h3>
 			<article className='box'>
-				<button onClick={clearCart}>Limpiar Carrito</button>
+				<button onClick={() => dispatch(clearCart())}>Limpiar Carrito</button>
 				{cart.map((item, index) => (
-					<CartItem key={index} data={item} delFromCart={delFromCart} />
+					<CartItem
+						key={index}
+						data={item}
+						deleteFromCart={() => dispatch(deleteFromCart(item.id))}
+						deleteAllFromCart={() => dispatch(deleteFromCart(item.id, true))}
+					/>
 				))}
 			</article>
 		</div>
