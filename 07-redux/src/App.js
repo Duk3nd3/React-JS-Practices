@@ -10,6 +10,7 @@ function App() {
 			<div style={{ textAlign: 'center' }}>
 				<h1>Redux</h1>
 				<hr />
+				<hr />
 				<ShoppingCart />
 				<hr />
 				<Contador />

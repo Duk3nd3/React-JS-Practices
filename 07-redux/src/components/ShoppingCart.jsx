@@ -14,7 +14,7 @@ const ShoppingCart = () => {
 	const { products, cart } = state.cart;
 
 	return (
-		<div className='my-page m-3'>
+		<div className='my-page'>
 			<h2>Carrito de Compras</h2>
 			<h3>Productos</h3>
 			<article className='box grid-responsive'>
