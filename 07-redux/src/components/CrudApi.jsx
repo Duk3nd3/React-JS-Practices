@@ -1,16 +1,23 @@
 import CrudForm from './CrudForm';
 import CrudTable from './CrudTable';
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { helpHttp } from '../helpers/helpHttp';
 import Message from './Message';
 import Loader from './Loader';
-import { crudInitialState, crudReducer } from '../reducers/crudReducer';
-import { TYPES } from '../actions/crudActions';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+	createAction,
+	deleteAction,
+	noAction,
+	readAllAction,
+	updateAction,
+} from '../actions/crudActions';
 
 const CrudApi = () => {
-	// const [db, setDb] = useState(null);
-	const [state, dispatch] = useReducer(crudReducer, crudInitialState);
-	const { db } = state;
+	const state = useSelector((state) => state);
+	const dispatch = useDispatch();
+	const { db } = state.crud;
+
 	const [dataToEdit, setDataToEdit] = useState(null);
 	const [error, setError] = useState(null);
 	const [loading, setLoading] = useState(false);
@@ -24,18 +31,16 @@ const CrudApi = () => {
 			.get(url)
 			.then((res) => {
 				if (!res.err) {
-					// setDb(res);
-					dispatch({ type: TYPES.READ_ALL_DATA, payload: res });
+					dispatch(readAllAction(res));
 					setError(null);
 				} else {
-					// setDb(null);
-					dispatch({ type: TYPES.NO_DATA });
+					dispatch(noAction());
 					setError(res);
 				}
 
 				setLoading(false);
 			});
-	}, [url]);
+	}, [url, dispatch]);
 
 	const createData = (data) => {
 		data.id = Date.now();
@@ -47,8 +52,7 @@ const CrudApi = () => {
 
 		api.post(url, options).then((res) => {
 			if (!res.err) {
-				// setDb([...db, res]);
-				dispatch({ type: TYPES.CREATE_DATA, payload: res });
+				dispatch(createAction(res));
 			} else {
 				setError(res);
 			}
@@ -65,9 +69,7 @@ const CrudApi = () => {
 
 		api.put(endpoint, options).then((res) => {
 			if (!res.err) {
-				// let newData = db.map((el) => (el.id === data.id ? data : el));
-				dispatch({ type: TYPES.UPDATE_DATA, payload: data });
-				// setDb(newData);
+				dispatch(updateAction(res));
 			} else {
 				setError(res);
 			}
@@ -86,9 +88,7 @@ const CrudApi = () => {
 
 			api.del(endpoint, options).then((res) => {
 				if (!res.err) {
-					// let newData = db.filter((el) => el.id !== id);
-					dispatch({ type: TYPES.DELETE_DATA, payload: id });
-					// setDb(newData);
+					dispatch(deleteAction(id));
 				} else {
 					setError(res);
 				}

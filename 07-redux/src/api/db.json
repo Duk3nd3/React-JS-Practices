@@ -36,14 +36,14 @@
       "id": 1655946632975
     },
     {
-      "name": "Mu",
-      "constellation": "Aries",
-      "id": 1655946640596
-    },
-    {
       "name": "Afrodita",
       "constellation": "Piscis",
       "id": 1655946663498
+    },
+    {
+      "name": "Aioros",
+      "constellation": "Sagitario",
+      "id": 1656189660596
     }
   ]
 }

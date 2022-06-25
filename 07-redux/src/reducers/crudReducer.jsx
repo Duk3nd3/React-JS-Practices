@@ -6,8 +6,8 @@ import {
 	UPDATE_DATA,
 } from '../types';
 
-export const crudInitialState = {
-	db: null,
+export const initialState = {
+	db: [],
 };
 
 export function crudReducer(state, action) {
@@ -41,8 +41,8 @@ export function crudReducer(state, action) {
 			};
 		}
 		case NO_DATA:
-			return crudInitialState;
+			return initialState;
 		default:
-			return state;
+			return [];
 	}
 }
