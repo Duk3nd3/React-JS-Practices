@@ -40,7 +40,7 @@ const ConceptosBasicos = () => {
 					<Route path='*' component={Error404} />
 				</Switch>
 			</HashRouter>
-			<hr />
+			{/* <hr />
 			<h2>Conceptos Basicos</h2>
 			<MenuConceptos />
 			<Switch>
@@ -57,10 +57,10 @@ const ConceptosBasicos = () => {
 				</Route>
 				<Route path='/react' component={ReactTopics} />
 				<Route exact path='/login' component={Login} />
-				{/* <Route exact path='/dashboard' component={Dashboard} /> */}
+				<Route exact path='/dashboard' component={Dashboard} />
 				<PrivateRoute exact path='/dashboard' component={Dashboard} />
 				<Route path='*' component={Error404} />
-			</Switch>
+			</Switch> */}
 		</div>
 	);
 };
